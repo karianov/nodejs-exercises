@@ -1,7 +1,7 @@
-const fs = require('fs');
+import { appendFileSync } from 'fs';
 
 // Create or override content
 // fs.writeFileSync('notes.txt', 'My name is Kevin Alexandre');
 
 // Append content
-fs.appendFileSync('notes.txt', '\nI am learning Node.js!')
+appendFileSync('notes.txt', '\nI am learning Node.js!')
