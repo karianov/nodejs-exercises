@@ -1,7 +1,11 @@
-import { appendFileSync } from 'fs';
+// Basic own imports
+// const add = require('./utils.js');
+// const sum = add(4, -2);
+// console.log(sum);
 
-// Create or override content
-// fs.writeFileSync('notes.txt', 'My name is Kevin Alexandre');
+// Functions imports
+const getNotes = require('./notes.js');
 
-// Append content
-appendFileSync('notes.txt', '\nI am learning Node.js!')
+const notes = getNotes();
+
+console.log(notes);
