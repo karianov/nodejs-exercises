@@ -19,8 +19,8 @@ yargs.command({
     body: {
       description: 'Note body',
       demandOption: true,
-      type: 'string'
-    }
+      type: 'string',
+    },
   },
   handler: (argv) => {
     console.log('Title: ' + argv.title);
