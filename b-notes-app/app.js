@@ -1,6 +1,4 @@
 const notesModule = require('./notes.js');
-const validator = require('validator');
-const chalk = require('chalk');
 const yargs = require('yargs');
 
 // Set yargs version
@@ -12,18 +10,18 @@ yargs.command({
   describe: 'Add a new note',
   builder: {
     title: {
-      description: 'Note title',
+      describe: 'Note title',
       demandOption: true,
       type: 'string',
     },
     body: {
-      description: 'Note body',
+      describe: 'Note body',
       demandOption: true,
       type: 'string',
     },
   },
   handler: (argv) => {
-    notesModule.addNote(argv.title, argv.body)
+    notesModule.addNote(argv.title, argv.body);
   },
 });
 
@@ -31,8 +29,15 @@ yargs.command({
 yargs.command({
   command: 'remove',
   describe: 'Remove an existing note',
-  handler: () => {
-    console.log('Removing the note');
+  builder: {
+    title: {
+      describe: 'Note title',
+      demandOption: true,
+      type: 'string',
+    },
+  },
+  handler: (argv) => {
+    notesModule.removeNote(argv.title);
   },
 });
 
