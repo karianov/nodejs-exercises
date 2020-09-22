@@ -46,7 +46,7 @@ yargs.command({
   command: 'list',
   describe: 'List all existing notes',
   handler() {
-    console.log('Listing out the notes');
+    notesModule.listNotes();
   },
 });
 
