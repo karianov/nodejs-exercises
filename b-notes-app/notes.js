@@ -46,9 +46,7 @@ const readNote = (title) => {
 
 const saveNotes = function (notes) {
   const notesData = JSON.stringify(notes);
-  // Typing error that has a trace in the terminal.
-  // I can debug it with console logs or debugger option.
-  fs.writeFileSync('notes.json', notesDta);
+  fs.writeFileSync('notes.json', notesData);
 };
 
 const loadNotes = () => {
