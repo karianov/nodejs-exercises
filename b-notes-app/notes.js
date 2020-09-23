@@ -4,8 +4,6 @@ const chalk = require('chalk');
 const addNote = (title, body) => {
   const notes = loadNotes();
   const duplicateNote = notes.find((note) => note.title === title);
-  // Debug operation with "node inspect" in the terminal
-  debugger
   if (!duplicateNote) {
     notes.push({
       title: title,
@@ -48,7 +46,9 @@ const readNote = (title) => {
 
 const saveNotes = function (notes) {
   const notesData = JSON.stringify(notes);
-  fs.writeFileSync('notes.json', notesData);
+  // Typing error that has a trace in the terminal.
+  // I can debug it with console logs or debugger option.
+  fs.writeFileSync('notes.json', notesDta);
 };
 
 const loadNotes = () => {
